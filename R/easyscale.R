@@ -2,7 +2,7 @@ easyscale <- function(df, col, option){
   if(option == "minmax"){
     tmp <- as.data.frame(sapply(df[col], function(x){(x-min(x)) / (max(x)-min(x))}))
     df[col] <- tmp
-  } else{
+  } else if(option == "standardization"){
     tmp <- as.data.frame(scale(df[col]))
     df[col] <- tmp
   }
